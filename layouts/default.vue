@@ -5,6 +5,7 @@
       :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
+      color="green"
       app
     >
       <v-list>
@@ -16,28 +17,26 @@
           exact
         >
           <v-list-item-action>
-            <v-icon color="green">{{ item.icon }}</v-icon>
+            <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" class="green--text" />
+            <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon color="green" @click.stop="drawer = !drawer" />
+    <v-app-bar :clipped-left="clipped" fixed app color="green">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon color="green">
-          mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}
-        </v-icon>
+        <v-icon> mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }} </v-icon>
       </v-btn>
       <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon color="green">mdi-application</v-icon>
+        <v-icon>mdi-application</v-icon>
       </v-btn>
       <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon color="green">mdi-minus</v-icon>
+        <v-icon>mdi-minus</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title" class="green--text font-weight-bold	" />
+      <v-toolbar-title class="font-weight-bold" v-text="title" />
       <v-spacer />
     </v-app-bar>
     <v-content>
@@ -61,12 +60,12 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Editor',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
+          title: 'Dummy',
           to: '/inspire'
         }
       ],

@@ -32,7 +32,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~plugins/quill.js', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -47,7 +47,8 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/markdownit'
   ],
   router: {
     mode: 'hash'
@@ -81,6 +82,17 @@ module.exports = {
       }
     }
   },
+
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true,
+    html: true,
+    typographer: true,
+    use: ['markdown-it-div', 'markdown-it-attrs']
+  },
+
   /*
    ** Build configuration
    */
