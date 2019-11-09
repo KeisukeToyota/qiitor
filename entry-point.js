@@ -29,6 +29,8 @@ const electron = require('electron')
 const app = electron.app
 const newWin = () => {
   win = new electron.BrowserWindow({
+    width: 1280,
+    height: 720,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
