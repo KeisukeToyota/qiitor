@@ -32,7 +32,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/quill.js', ssr: false }],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -48,7 +48,8 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/vuetify',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@tui-nuxt/editor'
   ],
   router: {
     mode: 'hash'

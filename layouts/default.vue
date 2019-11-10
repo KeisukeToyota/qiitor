@@ -59,7 +59,7 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-pencil',
           title: 'Editor',
           to: '/'
         },
