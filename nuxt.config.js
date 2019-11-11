@@ -4,9 +4,7 @@ const colors = require('vuetify/es5/util/colors')
 // eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
   mode: 'spa',
-  /*
-   ** Headers of the page
-   */
+
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -21,35 +19,22 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  /*
-   ** Customize the progress-bar color
-   */
+
   loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
+
   css: [],
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [],
-  /*
-   ** Nuxt.js dev-modules
-   */
+
+  plugins: ['~/plugins/axios'],
+
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify'
   ],
-  /*
-   ** Nuxt.js modules
-   */
+
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/vuetify',
-    '@nuxtjs/markdownit',
-    '@tui-nuxt/editor'
+    '@nuxtjs/markdownit'
   ],
   router: {
     mode: 'hash'
@@ -57,15 +42,8 @@ module.exports = {
 
   dev: process.env.NODE_ENV === 'development',
 
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
   axios: {},
-  /*
-   ** vuetify module configuration
-   ** https://github.com/nuxt-community/vuetify-module
-   */
+
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -94,13 +72,7 @@ module.exports = {
     use: ['markdown-it-div', 'markdown-it-attrs']
   },
 
-  /*
-   ** Build configuration
-   */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
     extend(config, ctx) {
       config.output.publicPath = './_nuxt/'
     }
