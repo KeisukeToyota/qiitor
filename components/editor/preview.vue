@@ -30,7 +30,6 @@ export default {
   margin-bottom: 20px;
 }
 .preview-body {
-  max-width: 50%;
   word-wrap: break-word;
 }
 </style>

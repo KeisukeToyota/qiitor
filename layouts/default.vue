@@ -63,8 +63,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Dummy',
-          to: '/inspire'
+          title: 'List',
+          to: '/list'
         }
       ],
       miniVariant: false,

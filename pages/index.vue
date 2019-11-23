@@ -1,10 +1,10 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col>
+      <v-col class="split">
         <markdown />
       </v-col>
-      <v-col>
+      <v-col class="split">
         <preview />
       </v-col>
     </v-row>
@@ -34,6 +34,7 @@ export default {
   methods: {
     fetchArticles() {
       qiita.getArticles().then((data) => {
+        console.log(data)
         this.articles = data
       })
     }
@@ -41,4 +42,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.split {
+  width: 50%;
+  max-width: 50%;
+}
+</style>

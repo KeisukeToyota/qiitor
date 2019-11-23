@@ -35,7 +35,7 @@ export default {
   computed: {
     title: {
       get() {
-        return this.$store.state.editor.title
+        return this.$route.query.title || this.$store.state.editor.title
       },
       set(val) {
         this.$store.commit('editor/setTitle', val)
@@ -43,12 +43,16 @@ export default {
     },
     body: {
       get() {
-        return this.$store.state.editor.body
+        return this.$route.query.body || this.$store.state.editor.body
       },
       set(val) {
         this.$store.commit('editor/setBody', val)
       }
     }
+  },
+  created() {
+    this.$store.commit('editor/setTitle', this.title)
+    this.$store.commit('editor/setBody', this.body)
   }
 }
 </script>
