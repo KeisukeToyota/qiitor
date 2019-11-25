@@ -13,7 +13,6 @@
 
 <script>
 'use strict'
-import qiita from '~/lib/qiita'
 
 import Markdown from '~/components/editor/markdown'
 import Preview from '~/components/editor/Preview'
@@ -22,22 +21,6 @@ export default {
   components: {
     Markdown,
     Preview
-  },
-  data() {
-    return {
-      articles: []
-    }
-  },
-  created() {
-    this.fetchArticles()
-  },
-  methods: {
-    fetchArticles() {
-      qiita.getArticles().then((data) => {
-        console.log(data)
-        this.articles = data
-      })
-    }
   }
 }
 </script>

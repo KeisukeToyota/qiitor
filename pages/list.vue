@@ -25,7 +25,6 @@ export default {
         { text: 'TITLE', value: 'title' },
         { text: 'LIKES', value: 'likes_count' },
         { text: 'URL', value: 'url' }
-        // { text: 'VIEW COUNT', value: 'page_views_count' }
       ]
     }
   },
@@ -34,9 +33,16 @@ export default {
   },
   methods: {
     fetchArticles() {
-      qiita.getArticles().then((data) => {
-        this.articles = data
-      })
+      const articles = this.$store.state.list.articles
+
+      if (articles.length > 0) {
+        this.articles = articles
+      } else {
+        qiita.getArticles().then((data) => {
+          console.log(data)
+          this.articles = data
+        })
+      }
     },
     selectedArticle(article) {
       this.$router.push({
