@@ -3,8 +3,8 @@
 > Qiita article editor
 
 ![](images/screen_shot1.png)
-![](image/screen_shot2.png)
-![](image/screen_shot3.png)
+![](images/screen_shot2.png)
+![](images/screen_shot3.png)
 
 
 ## Develop
